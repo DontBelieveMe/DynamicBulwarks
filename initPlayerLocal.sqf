@@ -15,6 +15,8 @@ if(isNil "_killPoints") then {
 };
 _killPoints = _killPoints + ("START_KILLPOINTS" call BIS_fnc_getParamValue);
 player setVariable ["killPoints", _killPoints, true];
+player setVariable ["isCurrentlyHoldingObject", false];
+
 [] call killPoints_fnc_updateHud;
 
 // Delete all map markers on clients

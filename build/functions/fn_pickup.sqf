@@ -14,6 +14,7 @@ _closestPlayerDist = 9999;
 } forEach _allPlayers;
 
 if (_closestPlayerDist > 5) then {
+	player setVariable ["isCurrentlyHoldingObject", true];
 
 	if (isNil "_pos") then {
 		[_object, _caller] call BIS_fnc_attachToRelative ;

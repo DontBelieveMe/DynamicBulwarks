@@ -1,7 +1,7 @@
 _object = _this select 0;
 _caller = _this select 1;
 _action = _this select 2;
-
+player setVariable ["isCurrentlyHoldingObject", false];
 detach _object;
 
 {
@@ -44,7 +44,7 @@ _object setVehiclePosition [_object, [], 0, 'CAN_COLLIDE'],
 	[
 		'<t color="#ffffff">Pickup</t>',
 		'[_this select 0, _this select 1] call build_fnc_pickup;',
-		[0,0,0.5],2,false,false,'true','true',5
+		[0,0,0.5],2,false,false,'true','not (player getVariable "isCurrentlyHoldingObject")',5
 	]
 ] remoteExec ['addAction', 0];
 
