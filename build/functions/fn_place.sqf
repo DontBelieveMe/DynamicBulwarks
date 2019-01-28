@@ -8,6 +8,9 @@ detach _object;
 [_object, _objectPos] remoteExec ["setPosATL", 0];
 [_object, true] remoteExec ["enableSimulation", 0];
 
+_object setVelocity [0,0,0];
+player setVariable ["isCurrentlyHoldingObject", false];
+
 {
 	[_object, _x] remoteExec ['enableCollisionWith', 0];
 } forEach playableUnits;

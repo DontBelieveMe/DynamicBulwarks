@@ -6,13 +6,16 @@ player setVariable ["isCurrentlyHoldingObject", false];
 
 detach _object;
 
+_object setVelocity [0,0,0];
+
+player allowDamage false;
 {
 	[_object, _x] remoteExec ['enableCollisionWith', 0];
 } forEach playableUnits;
 
 [_caller] remoteExec ["removeAllActions", 0];
 
-_object setVehiclePosition [_object, [0, 0, -0.1], 0, 'CAN_COLLIDE'],
+_object setVehiclePosition [_object, [], 0, 'CAN_COLLIDE'],
 
 [
 	_object,
