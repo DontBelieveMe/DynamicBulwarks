@@ -21,7 +21,7 @@ if(_shopClass == "") exitWith {};
 if(player getVariable "killPoints" >= _shopPrice) then {
     [player, _shopPrice] remoteExec ["killPoints_fnc_spend", 2];
     shopVehic = _shopClass createVehicle [0,0,0];
-	  shopVehic setVariable ["shopPrice", _shopPrice, true];
+      shopVehic setVariable ["shopPrice", _shopPrice, true];
     shopVehic setVariable ["Radius", _VecRadius];
     objPurchase = true;
 } else {

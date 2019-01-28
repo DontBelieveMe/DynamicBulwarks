@@ -1,7 +1,9 @@
 _object = _this select 0;
 _caller = _this select 1;
 _action = _this select 2;
+
 player setVariable ["isCurrentlyHoldingObject", false];
+
 detach _object;
 
 {
@@ -10,7 +12,7 @@ detach _object;
 
 [_caller] remoteExec ["removeAllActions", 0];
 
-_object setVehiclePosition [_object, [], 0, 'CAN_COLLIDE'],
+_object setVehiclePosition [_object, [0, 0, -0.1], 0, 'CAN_COLLIDE'],
 
 [
 	_object,
