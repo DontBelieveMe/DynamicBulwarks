@@ -8,7 +8,6 @@ detach _object;
 
 _object setVelocity [0,0,0];
 
-player allowDamage false;
 {
 	[_object, _x] remoteExec ['enableCollisionWith', 0];
 } forEach playableUnits;
